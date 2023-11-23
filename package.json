@@ -2,16 +2,30 @@
   "name": "roomba",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "start": "npm run build && npm run deploy && npm run launch",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "node dist/deploy-commands.js",
+    "launch": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoeDevelops/roomba.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoeDevelops/roomba/issues"
+  },
+  "homepage": "https://github.com/MoeDevelops/roomba#readme",
   "devDependencies": {
     "@types/node": "^20.9.4",
+    "eslint": "^8.54.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1"
   }
 }

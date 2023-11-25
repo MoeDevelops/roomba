@@ -18,13 +18,13 @@ class Database {
     }
 
     constructor() {
-        this._db = new sqlite3.Database(":memory:");
+        this._db = new sqlite3.Database("data/database.db");
         this.initDatabase();
     }
 
     private initDatabase() {
         this.db.serialize(() => {
-            this.db.run("CREATE TABLE IF NOT EXISTS Channels (GuildId TEXT, ChannelId TEXT PRIMARY KEY)");
+            this.db.run("CREATE TABLE IF NOT EXISTS Channels (ChannelId TEXT PRIMARY KEY, MessageId TEXT, RoomAmount INT, ResidentsPerRoom INT)");
         })
     }
 }

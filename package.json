@@ -6,7 +6,8 @@
     "start": "npm run build && npm run deploy && npm run launch",
     "build": "tsc",
     "deploy": "node dist/deploy-commands.js",
-    "launch": "node dist/index.js"
+    "launch": "node dist/index.js",
+    "clean": "rm -r dist/"
   },
   "repository": {
     "type": "git",
